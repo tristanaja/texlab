@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="min-h-screen bg-background font-sans antialiased">
       <header className="container mx-auto mt-5 p-2 md:p-4 flex flex-col justify-center items-center">
-        <img src="../public/logo_f.svg" alt="TexLab" className='mb-2 p-0 w-42' />
+        <img src="/logo_f.svg" alt="TexLab" className='mb-2 p-0 w-42' />
         <p className="text-md md:text-lg font-normal">A simple LaTeX editor</p>
       </header>
       <main className="container mx-auto p-4 sm:p-2 space-y-4">

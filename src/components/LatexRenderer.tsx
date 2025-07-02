@@ -31,7 +31,7 @@ const LatexRenderer = React.forwardRef<HTMLDivElement, LatexRendererProps>(({ la
         <CardTitle>Rendered Output</CardTitle>
       </CardHeader>
       <CardContent>
-        <div ref={internalRef} className="p-4 sm:p-2 text-2xl sm:text-xl text-center"></div>
+        <div ref={internalRef} className="p-4 sm:p-2 text-xl md:text-2xl text-center"></div>
       </CardContent>
     </Card>
   );
