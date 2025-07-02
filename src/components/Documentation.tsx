@@ -25,11 +25,11 @@ const Documentation: React.FC = () => {
           <AccordionItem value="item-1">
             <AccordionTrigger>Basic Syntax</AccordionTrigger>
             <AccordionContent>
-              <p>Inline math is enclosed in \(...\), and display math is enclosed in \[...\]</p>
+              <p>Inline math is enclosed in (...), and display math is enclosed in [...]</p>
               <CodeBlock>
-                {`\\(x^2 + y^2 = z^2\\) vs \\[x^2 + y^2 = z^2\\]`}
+                {`(x^2 + y^2 = z^2) vs [x^2 + y^2 = z^2]`}
               </CodeBlock>
-              <DocLatexRenderer latex={`x^2 + y^2 = z^2`} />
+              <DocLatexRenderer latex={`(x^2 + y^2 = z^2) vs  [x^2 + y^2 = z^2]`} />
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -43,9 +43,9 @@ const Documentation: React.FC = () => {
           <AccordionItem value="item-3">
             <AccordionTrigger>Fractions & Roots</AccordionTrigger>
             <AccordionContent>
-              <p>{"Use \frac{num}{den} for fractions, \sqrt{x} for square roots, and \sqrt[n]{x} for nth roots."}</p>
+              <p>{"Use frac{num}{den} for fractions, sqrt{x} for square roots, and sqrt[n]{x} for nth roots."}</p>
               <CodeBlock>{`\\frac{a}{b}, \\sqrt{x}, \\sqrt[n]{x}`}</CodeBlock>
-              <DocLatexRenderer latex={`\frac{a}{b}, \sqrt{x}, \sqrt[n]{x}`} />
+              <DocLatexRenderer latex={`\\frac{a}{b}, \\sqrt{x}, \\sqrt[n]{x}`} />
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
@@ -53,15 +53,15 @@ const Documentation: React.FC = () => {
             <AccordionContent>
               <p>Lowercase: \alpha, \beta, \gamma. Uppercase: \Alpha, \Beta, \Gamma.</p>
               <CodeBlock>{`\\alpha, \\beta, \\gamma, \\Alpha, \\Beta, \\Gamma`}</CodeBlock>
-              <DocLatexRenderer latex={`\alpha, \beta, \gamma, \Alpha, \Beta, \Gamma`} />
+              <DocLatexRenderer latex={`\\alpha, \\beta, \\gamma, \\Alpha, \\Beta, \\Gamma`} />
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
             <AccordionTrigger>Operators</AccordionTrigger>
             <AccordionContent>
               <p>Common operators: \pm, \times, \div, \leq, \geq, \neq.</p>
-              <CodeBlock>{`\pm, \times, \div, \leq, \geq, \neq`}</CodeBlock>
-              <DocLatexRenderer latex={`\pm, \times, \div, \leq, \geq, \neq`} />
+              <CodeBlock>{`\\pm, \\times, \\div, \\leq, \\geq, \\neq`}</CodeBlock>
+              <DocLatexRenderer latex={`\\pm, \\times, \\div, \\leq, \\geq, \\neq`} />
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-6">
@@ -69,7 +69,7 @@ const Documentation: React.FC = () => {
             <AccordionContent>
               <p>Use \sum for summations and \int for integrals. Use _ and ^ for limits.</p>
               <CodeBlock>{`\\sum_{i=1}^n i^2, \\int_0^\\infty e^{-x} dx`}</CodeBlock>
-              <DocLatexRenderer latex={`\sum_{i=1}^n i^2, \int_0^\infty e^{-x} dx`} />
+              <DocLatexRenderer latex={`\\sum_{i=1}^n i^2, \\int_0^\\infty e^{-x} dx`} />
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-7">
@@ -77,7 +77,7 @@ const Documentation: React.FC = () => {
             <AccordionContent>
               <p>Use the matrix environment. Use & to separate columns and \ to separate rows.</p>
               <CodeBlock>{`\\begin{matrix} a & b \\ c & d \\end{matrix}`}</CodeBlock>
-              <DocLatexRenderer latex={`\begin{matrix} a & b \\ c & d \end{matrix}`} />
+              <DocLatexRenderer latex={`\\begin{matrix} a & b \\ c & d \\end{matrix}`} />
             </AccordionContent>
           </AccordionItem>
         </Accordion>
