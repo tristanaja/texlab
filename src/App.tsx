@@ -3,13 +3,24 @@ import './App.css';
 import LatexRenderer from './components/LatexRenderer';
 import InputForm from './components/InputForm';
 import Documentation from './components/Documentation';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { toPng } from 'html-to-image';
 import jsPDF from 'jspdf';
 
 function App() {
-  const [latex, setLatex] = useState('E = mc^2');
+  const [latexInput, setLatexInput] = useState('E = mc^2');
+  const [debouncedLatex, setDebouncedLatex] = useState(latexInput);
   const renderedOutputRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedLatex(latexInput);
+    }, 500); // 500ms debounce time
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [latexInput]);
 
   const handleDownloadPng = () => {
     if (renderedOutputRef.current) {
@@ -42,10 +53,10 @@ function App() {
         <p className="text-md md:text-lg font-normal">A simple LaTeX editor</p>
       </header>
       <main className="container mx-auto p-4 sm:p-2 space-y-4">
-        <LatexRenderer latex={latex} ref={renderedOutputRef} />
+        <LatexRenderer latex={debouncedLatex} ref={renderedOutputRef} />
         <InputForm
-          setLatex={setLatex}
-          latex={latex}
+          setLatexInput={setLatexInput}
+          latexInput={latexInput}
           onDownloadPng={handleDownloadPng}
           onDownloadPdf={handleDownloadPdf}
         />
